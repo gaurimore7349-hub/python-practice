@@ -1,0 +1,56 @@
+# Library Borrowing Records 
+
+books=["python","java","c++","AI","DBMS"]
+borrow=[4,2,0,6,2]
+
+#1. Average Borrow Count
+total=0
+for i in borrow:
+    total=total+i
+
+average=total/len(borrow)
+print("Average Borrow Count=",average)
+
+#2.Highest BOrrowed Book
+highest=borrow[0]
+book_high=books[0]
+
+for i in range(len(borrow)):
+    if borrow[i]>highest:
+        highest=borrow[i]
+        book_high=books[i]
+
+print("highest borrowed book=",book_high)
+
+#3.Lowest borrowed book
+lowest=borrow[0]
+book_low=books[0]
+
+for i in range(len(borrow)):
+    if borrow[i]<lowest:
+        lowest=borrow[i]
+        book_low=books[i]
+
+print("lowest borrowed book=",book_low)
+
+#4.count books not borrowed 
+count=0
+
+for i in borrow:
+    if i==0:
+        count=count+1
+
+print("books not borrowed=",count)
+
+#5. mode(Most frequent borrow count)
+
+mode=borrow[0]
+max_count=0
+
+for i in borrow:
+    c=borrow.count(i)
+    if c>max_count:
+        max_count=c
+        mode=i
+
+print("mode of borrow count=",mode)        
